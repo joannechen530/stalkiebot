@@ -13,10 +13,12 @@ import RouteHandler from './RouteHandler';
 export default class Server {
 
     private port: number;
+    private host: string;
     private rest: restify.Server;
 
-    constructor(port: number) {
+    constructor(host: string, port: number) {
         Log.info("Server::<init>( " + port + " )");
+        this.host = host;
         this.port = port;
     }
 
@@ -55,11 +57,11 @@ export default class Server {
 
                 // Loads the homepage.
                 // curl -is  http://localhost:4321/
-		that.rest.get('/webhook', RouteHandler.getHandler);
+                that.rest.get('/webhook', RouteHandler.getHandler);
 
                 that.rest.post('/webhook', restify.bodyParser(), RouteHandler.postHandler);
 
-                that.rest.listen(that.port, function () {
+                that.rest.listen(that.port, that.host, function () {
                     Log.info('Server::start() - restify listening: ' + that.rest.url);
                     fulfill(true);
                 });
