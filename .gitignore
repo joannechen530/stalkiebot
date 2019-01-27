@@ -16,5 +16,6 @@ npm-debug.log
 .DS_Store
 .hg/
 .hgignore
+.env
 mochawesome-reports
 package-lock.json

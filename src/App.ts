@@ -4,6 +4,7 @@
 
 import Server from './rest/Server';
 import Log from './Util';
+const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
 
 /**
  * Starts the server; doesn't listen to whether the start was successful.

@@ -1,6 +1,7 @@
 "use strict";
 var Server_1 = require('./rest/Server');
 var Util_1 = require('./Util');
+var PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
 var App = (function () {
     function App() {
     }
