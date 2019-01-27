@@ -12,6 +12,7 @@ src/**/*.map
 test/*.js
 test/*.map
 npm-debug.log
+./dist
 .DS_Store
 .hg/
 .hgignore
